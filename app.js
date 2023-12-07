@@ -1,22 +1,6 @@
 const myLibrary = [
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
     new Book("The Hobbit", "J.R.R. Tolkien", 300, true)];
+const addBtn = document.getElementById('addBtn');
 
 function Book(title, author, numPages, isRead) {
     //TODO: add constructor
