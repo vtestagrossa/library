@@ -1,4 +1,22 @@
-const myLibrary = [new Book("The Hobbit", "J.R.R. Tolkien", 300, true)];
+const myLibrary = [
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true),
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, true)];
 
 function Book(title, author, numPages, isRead) {
     //TODO: add constructor
@@ -11,6 +29,7 @@ function Book(title, author, numPages, isRead) {
 function addBookToLibrary() {
     //TODO: add book to library
 }
+//TODO: format the book class so that it loads into the grid view with wrapping
 function showLibrary(){
     myLibrary.forEach(function(book){
         let card = document.createElement('div');
