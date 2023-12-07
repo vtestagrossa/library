@@ -1,4 +1,4 @@
-const myLibrary = [new Book("The Hobbit", "J.R.R. Tolkien", "300", true)];
+const myLibrary = [new Book("The Hobbit", "J.R.R. Tolkien", 300, true)];
 
 function Book(title, author, numPages, isRead) {
     //TODO: add constructor
@@ -11,9 +11,15 @@ function Book(title, author, numPages, isRead) {
 function addBookToLibrary() {
     //TODO: add book to library
 }
-
 function showLibrary(){
-    for (book in myLibrary){
-        //TODO: loop through each book in the library and display it on the page
-    }
+    myLibrary.forEach(function(book){
+        let card = document.createElement('div');
+        card.classList.add('book');
+        document.getElementById('content-books').appendChild(card);
+        for (let prop in book){
+            card.appendChild(document.createElement('p'));
+            card.lastElementChild.textContent = book[prop];
+        }
+    });
 }
+showLibrary(myLibrary);
