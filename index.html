@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <dialog id="input-dialog" class="input-dialog">
+        <form action="" method="dialog" class="input-form" id="input-form">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" required focus>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="pages">Pages</label>
+                    <input type="text" name="pages" id="pages" required>
+                </div>
+                <div class="form-group">
+                    <label for="isRead">Read?</label>
+                    <input name="isRead" id="isRead" type="checkbox">
+                </div>
+                <div class="form-group">
+                    <label for="submitBtn"></label>
+                    <input type="submit" id="submitBtn"><button id="closeDiag" type="button">Close</button>
+                </div>
+        </form>
+    </dialog>
     <div class="navbar" id="navbar">
         <h2>library</h2>
         <button id="addBtn" class="addBtn">add book</button>
@@ -25,5 +49,6 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>

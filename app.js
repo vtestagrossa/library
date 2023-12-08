@@ -1,6 +1,15 @@
 const myLibrary = [
     new Book("The Hobbit", "J.R.R. Tolkien", 300, true)];
 const addBtn = document.getElementById('addBtn');
+const closeBtn = document.getElementById('closeDiag');
+const submitBtn = document.getElementById('submitBtn');
+const dialog = document.getElementById('input-dialog');
+const content = document.getElementById('content-books');
+const form = document.getElementById('input-form');
+
+/* for (let i = 0; i < 160; i++){
+    myLibrary.push(new Book("Test book " + i, "Test author " + i, i, true));
+} */
 
 function Book(title, author, numPages, isRead) {
     //TODO: add constructor
@@ -9,20 +18,45 @@ function Book(title, author, numPages, isRead) {
     this.numPages = numPages;
     this.isRead = isRead;
 }
-
-function addBookToLibrary() {
-    //TODO: add book to library
+function openDialog() {
+    const dialog = document.getElementById('input-dialog');
+    dialog.showModal();
 }
-//TODO: format the book class so that it loads into the grid view with wrapping
+function addBookToLibrary(){
+    if(!form.checkValidity()){
+        alert("Please fill out the required inputs!");
+    }
+    else{
+        myLibrary.push(new Book(
+            document.getElementById("title").value,
+            document.getElementById("author").value,
+            document.getElementById("pages").value,
+            document.getElementById("isRead").checked
+        ));
+        showLibrary(myLibrary);
+    }
+}
+
 function showLibrary(){
+    clearGrid();
     myLibrary.forEach(function(book){
         let card = document.createElement('div');
         card.classList.add('book');
-        document.getElementById('content-books').appendChild(card);
+        content.appendChild(card);
         for (let prop in book){
-            card.appendChild(document.createElement('p'));
+            card.appendChild(document.createElement('label'));
             card.lastElementChild.textContent = book[prop];
         }
     });
 }
+function clearGrid(){
+    while(content.hasChildNodes()){
+        content.removeChild(content.firstChild);
+    }
+}
+addBtn.addEventListener("click", openDialog);
+submitBtn.addEventListener("click", addBookToLibrary);
+closeBtn.addEventListener("click", () => {
+    dialog.close();
+});
 showLibrary(myLibrary);

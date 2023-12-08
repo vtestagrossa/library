@@ -1,6 +1,15 @@
+@font-face{
+    font-family: "silkScreen";
+    src: url('fonts/Silkscreen-Regular.ttf')
+}
+@font-face{
+    font-family: "silkScreenBold";
+    src: url(fonts/Silkscreen-Bold.ttf);
+}
 body{
+    font-family: 'silkScreen';
     margin: 0;
-    height: 100vh;
+    height: 75vh;
     width: 100vw;
     background-color:gainsboro;
 }
@@ -15,7 +24,7 @@ body{
 .navbar{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 6%;
     width: 100%;
     background-color: white;
@@ -24,13 +33,28 @@ body{
     box-shadow: 0.125em 0.125em 0.75em gray;
 }
 .navbar h2{
-    margin-left: 10%;
+    margin-left: 0%;
+    font-size: 200%;
 }
 .addBtn{
     font-size: 130%;
-    margin-right: 10%;
-    padding-left: 1%;
-    padding-right: 1%;
+    margin-right: 0;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    font-family: 'silkScreenBold';
+    background-color: white;
+    border-style: solid;
+    border-radius: 0.5em;
+}
+.addBtn:hover{
+    background-color: gainsboro;
+    color: white;
+    background-color: rgb(138, 138, 138);
+    border-style: solid;
+}
+.addBtn:active{
+    border-style: inset;
+    background-color:gainsboro;
 }
 .content-pane{
     display: grid;
@@ -73,4 +97,17 @@ body{
     font-size: 130%;
     margin-top: 2%;
     margin-bottom: 2%;
+}
+.input-dialog{
+    position: fixed;
+    top: 33%;
+}
+.input-form{
+    display: flex;
+    flex-direction: column;
+}
+.form-group{
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
