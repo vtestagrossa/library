@@ -1,15 +1,12 @@
 const myLibrary = [
-    new Book("The Hobbit", "J.R.R. Tolkien", 300, true)];
+    new Book("The Hobbit", "J.R.R. Tolkien", 300, false)];
+    
 const addBtn = document.getElementById('addBtn');
 const closeBtn = document.getElementById('closeDiag');
 const submitBtn = document.getElementById('submitBtn');
 const dialog = document.getElementById('input-dialog');
 const content = document.getElementById('content-books');
 const form = document.getElementById('input-form');
-
-/* for (let i = 0; i < 160; i++){
-    myLibrary.push(new Book("Test book " + i, "Test author " + i, i, true));
-} */
 
 function Book(title, author, numPages, isRead) {
     //TODO: add constructor
@@ -39,6 +36,7 @@ function addBookToLibrary(){
 
 function showLibrary(){
     clearGrid();
+    let idNum = 0;
     myLibrary.forEach(function(book){
         let card = document.createElement('div');
         card.classList.add('book');
@@ -55,9 +53,25 @@ function showLibrary(){
         card.lastElementChild.appendChild(document.createElement('label'));
         card.lastElementChild.lastElementChild.textContent = "Has Read? ";
         card.lastElementChild.appendChild(document.createElement('input'));
-
         card.lastElementChild.lastElementChild.setAttribute('type', 'checkbox');
-        card.lastElementChild.lastElementChild.setAttribute('checked', book['isRead']);
+        
+        //assign an id to the attribute of the checkbox so we can toggle the value later
+        card.lastElementChild.lastElementChild.setAttribute('id', idNum);
+        card.lastElementChild.lastElementChild.checked = book['isRead'];
+        card.lastElementChild.lastElementChild.addEventListener("click", (event) => {
+            myLibrary[event.target.id].isRead = event.target.checked;
+            showLibrary();
+        });
+
+        card.appendChild(document.createElement('button'));
+        card.lastElementChild.classList.add('addBtn');
+        card.lastElementChild.textContent = 'Remove';
+        card.lastElementChild.setAttribute('id', idNum);
+        card.lastElementChild.addEventListener('click', (event)=>{
+            myLibrary.splice(event.target.id, 1);
+            showLibrary();
+        });
+        idNum++;
     });
 }
 function clearGrid(){
