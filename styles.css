@@ -30,7 +30,7 @@ body{
 .navbar{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 6%;
     width: 100%;
     background-color: white;
@@ -40,6 +40,7 @@ body{
 }
 .navbar h2{
     margin-left: 0%;
+    margin-right: 5%;
     font-size: 200%;
 }
 .addBtn{
@@ -50,6 +51,7 @@ body{
     align-items: center;
     justify-content: center;
     margin-right: 0;
+    margin-left: 5%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     font-family: 'silkScreenBold';
@@ -92,23 +94,27 @@ body{
     grid-gap: 4%;
     grid-area: ba;
     padding: 2.5%;
+    margin-top: 2.5%;
 }
 .book{
     padding: 10%;
-    padding-top: 15%;
-    padding-bottom: 15%;
+    padding-top: 10%;
+    padding-bottom: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     background-color: rgb(255, 255, 255);
     border-radius: 10%;
     box-shadow: 0.25em 0.25em 0.75em rgb(100, 100, 100);
 }
-.book p{
-    font-size: 130%;
+.book label{
     margin-top: 2%;
     margin-bottom: 2%;
+}
+.book button{
+    margin-top: 8%;
+    font-size: 100%;
 }
 .input-dialog{
     position: fixed;
