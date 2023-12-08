@@ -43,10 +43,21 @@ function showLibrary(){
         let card = document.createElement('div');
         card.classList.add('book');
         content.appendChild(card);
-        for (let prop in book){
-            card.appendChild(document.createElement('label'));
-            card.lastElementChild.textContent = book[prop];
-        }
+        card.appendChild(document.createElement('label'));
+        card.lastElementChild.textContent = "Title: " + book['title'];
+        card.appendChild(document.createElement('label'));
+        card.lastElementChild.textContent = "Author: " + book['author'];
+        card.appendChild(document.createElement('label'));
+        card.lastElementChild.textContent = "Pages: " + book['numPages'];
+
+        card.appendChild(document.createElement('div'));
+        card.lastElementChild.classList.add('book-group');
+        card.lastElementChild.appendChild(document.createElement('label'));
+        card.lastElementChild.lastElementChild.textContent = "Has Read? ";
+        card.lastElementChild.appendChild(document.createElement('input'));
+
+        card.lastElementChild.lastElementChild.setAttribute('type', 'checkbox');
+        card.lastElementChild.lastElementChild.setAttribute('checked', book['isRead']);
     });
 }
 function clearGrid(){

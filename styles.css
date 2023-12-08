@@ -83,6 +83,7 @@ body{
     padding: 2.5%;
 }
 .book{
+    padding: 10%;
     padding-top: 15%;
     padding-bottom: 15%;
     display: flex;
@@ -100,7 +101,9 @@ body{
 }
 .input-dialog{
     position: fixed;
-    top: 33%;
+    top: 0;
+    padding: 1%;
+    box-shadow: 0.25em 0.25em 0.75em rgb(100, 100, 100);
 }
 .input-form{
     display: flex;
@@ -110,4 +113,18 @@ body{
     display: flex;
     justify-content: right;
     align-items: center;
+    margin-top: 5%;
+}
+.form-group label{
+    margin-right: 3%;
+}
+.form-group input{
+    font-size: 120%;
+}
+.form-group button{
+    margin-left: 5%;
+    font-size: 120%;
+}
+.book-group{
+    font-size: 100%;
 }
