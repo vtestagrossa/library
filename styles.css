@@ -70,6 +70,7 @@ body{
     background-color:gainsboro;
 }
 .content-pane{
+    margin-top: 5%;
     display: grid;
     grid-template: repeat(5, 20%) / 1fr repeat(3, 325px) 1fr;
     grid-template-areas: 
